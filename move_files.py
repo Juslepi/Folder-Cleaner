@@ -2,11 +2,14 @@ import os
 import shutil
 import json
 
-folder_path = os.path.realpath("C:/Users/Jussi/Downloads")
+settings_json = open('files.json')
+settings = json.load(settings_json)
+
+folder_path = os.path.realpath(settings["source"])
+target_files = settings["target"]
+
 files = os.listdir(folder_path)
 
-settings_json = open('files.json')
-target_files = json.load(settings_json)
 
 for file in files:
     filename, extension = os.path.splitext(file)
@@ -18,6 +21,6 @@ for file in files:
             if not os.path.isdir(target["destination"]): os.mkdir(target["destination"])
             try:
                 shutil.move(current_file, os.path.realpath(target["destination"]))
-                print(filename, extension, "moved to", target["destination"])
+                print(filename + extension, "moved to", target["destination"])
             except(shutil.Error):
-                print(filename, extension, "already exists in destination folder.")
+                print(filename + extension, "already exists in destination folder.")
