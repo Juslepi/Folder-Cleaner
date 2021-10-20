@@ -18,12 +18,17 @@ target_files = [
     }
 ]
 
+def createDir(path):
+    if os.path.isdir(path): return
+    os.mkdir(path)
+
 for file in files:
     filename, extension = os.path.splitext(file)
     current_file = os.path.join(folder_path, filename + extension)
     
     for target in target_files:
         if extension.split(".")[-1].lower() in target["extensions"]:
+            createDir(target["destination"])
             try:
                 shutil.move(current_file, target["destination"])
                 print(filename, extension, "moved to", target["destination"])
