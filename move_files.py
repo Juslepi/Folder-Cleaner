@@ -18,17 +18,15 @@ target_files = [
     }
 ]
 
-def createDir(path):
-    if os.path.isdir(path): return
-    os.mkdir(path)
 
 for file in files:
     filename, extension = os.path.splitext(file)
     current_file = os.path.join(folder_path, filename + extension)
     
     for target in target_files:
+        # Compare current file extension without dot
         if extension.split(".")[-1].lower() in target["extensions"]:
-            createDir(target["destination"])
+            if not os.path.isdir(target["destination"]): os.mkdir(target["destination"])
             try:
                 shutil.move(current_file, target["destination"])
                 print(filename, extension, "moved to", target["destination"])
@@ -38,3 +36,6 @@ for file in files:
 
 
 input("Enter to continue...")
+
+
+# TODO - load target_files from settings.json
