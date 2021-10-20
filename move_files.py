@@ -20,6 +20,7 @@ for file in files:
     if extension.split(".")[1] in guitarPro["extensions"]:
         try:
             shutil.move(current_file, destination)
+            print(f"{filename + extension} moved to {destination}")
         except (shutil.Error):
             print(filename, "already exists in destination folder.")
 
