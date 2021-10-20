@@ -1,0 +1,12 @@
+[
+    {  
+       "name" : "Guitar Pro",
+       "destination" : "C:/Users/Jussi/Documents/Tabs/moved-tabs",
+       "extensions" : ["gpx","gp2","gp3","gp4","gp5","gp6","gp7"]
+   },
+   {
+       "name": "Images",
+       "destination" : "C:/Users/Jussi/Documents/Tabs/moved-images",
+       "extensions" : ["jpeg", "jpg", "png"]
+   }
+]

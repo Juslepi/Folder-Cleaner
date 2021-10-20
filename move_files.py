@@ -21,10 +21,3 @@ for file in files:
                 print(filename, extension, "moved to", target["destination"])
             except(shutil.Error):
                 print(filename, extension, "already exists in destination folder.")
-
-
-
-input("Enter to continue...")
-
-
-# TODO - load target_files from settings.json
