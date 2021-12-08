@@ -1,0 +1,26 @@
+{
+    "target": [
+        {
+            "name": "Guitar Pro",
+            "destination": "C:/Users/Jussi/Documents/Tabs/",
+            "extensions": [
+                "gpx",
+                "gp2",
+                "gp3",
+                "gp4",
+                "gp5",
+                "gp6",
+                "gp7"
+            ]
+        },
+        {
+            "name": "Images/Videos",
+            "destination": "E:/Kuvat2",
+            "extensions": [
+                "jpeg",
+                "jpg",
+                "png",
+            ]
+        }
+    ]
+}
