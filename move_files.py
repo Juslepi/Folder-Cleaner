@@ -24,3 +24,5 @@ for file in files:
                 print(filename + extension, "moved to", target["destination"])
             except(shutil.Error):
                 print(filename + extension, "already exists in destination folder.")
+
+input("Press Enter...")
